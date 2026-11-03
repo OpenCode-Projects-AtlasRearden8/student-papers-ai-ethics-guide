@@ -1,0 +1,183 @@
+/* Essays and Papers with AI, Honestly — classroom-friendly stylesheet.
+   No web fonts, no trackers, no JavaScript. Prints cleanly. */
+
+:root {
+  --ink: #1c2430;
+  --paper: #fdfdfb;
+  --accent: #1a6462;
+  --accent-soft: #e3f0ef;
+  --line: #d8d6cf;
+  --quote: #5c5346;
+  --warn: #8a4a10;
+  --code-bg: #f2f0ea;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.06rem;
+  line-height: 1.65;
+}
+
+header.site-header,
+main,
+footer {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+header.site-header {
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid var(--accent);
+}
+
+header.site-header .brand {
+  margin: 0 0 0.6rem;
+  font-size: 1.05rem;
+}
+
+header.site-header .brand a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header.site-header nav a {
+  display: inline-block;
+  margin-right: 0.4rem;
+  padding: 0.15rem 0.55rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+}
+
+header.site-header nav a:hover {
+  background: var(--accent-soft);
+}
+
+main { padding-top: 1.75rem; padding-bottom: 2.5rem; }
+
+h1, h2, h3, h4 {
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+h2 {
+  font-size: 1.45rem;
+  margin: 2.2rem 0 0.8rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--line);
+}
+
+h3 { font-size: 1.15rem; margin: 1.6rem 0 0.5rem; }
+h4 { font-size: 1rem; margin: 1.3rem 0 0.4rem; }
+
+p, li { margin: 0.6rem 0; }
+
+a { color: var(--accent); }
+
+blockquote {
+  margin: 1.2rem 0;
+  padding: 0.7rem 1.1rem;
+  border-left: 4px solid var(--accent);
+  background: var(--accent-soft);
+  border-radius: 0 6px 6px 0;
+  color: var(--quote);
+}
+
+blockquote h3, blockquote h4 { margin-top: 0.5rem; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.1rem 0;
+  font-size: 0.94rem;
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+}
+
+th, td {
+  border: 1px solid var(--line);
+  padding: 0.45rem 0.6rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+thead th { background: var(--accent-soft); }
+
+tbody tr:nth-child(even) { background: #f8f7f3; }
+
+pre {
+  background: var(--code-bg);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  overflow-x: auto;
+  font-size: 0.88rem;
+}
+
+code {
+  background: var(--code-bg);
+  padding: 0.08rem 0.3rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+pre code { background: none; padding: 0; }
+
+ul.checklist { list-style: none; padding-left: 0.25rem; }
+
+hr {
+  border: none;
+  border-top: 1px dashed var(--line);
+  margin: 2rem 0;
+}
+
+p.subfooter {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.88rem;
+  color: var(--quote);
+}
+
+footer {
+  padding-top: 1rem;
+  padding-bottom: 2.25rem;
+  border-top: 3px solid var(--accent);
+  font-size: 0.82rem;
+  color: var(--quote);
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+}
+
+details {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  margin: 1rem 0;
+  background: #faf9f5;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+}
+
+/* Print: tight, ink-friendly, classroom handouts */
+@media print {
+  body { font-size: 10.5pt; background: #fff; }
+  header.site-header nav, footer { display: none; }
+  a { color: var(--ink); text-decoration: none; }
+  blockquote, table, pre, details, tr, h2 { page-break-inside: avoid; }
+  header.site-header { border-color: #555; }
+}
